@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fútbol Libre</title>
+    <style>
+        /* Estilo para el fondo de la página */
+        body {
+            background-image: url('fondo.jpg'); /* Reemplaza 'fondo.jpg' con la ruta de tu imagen de fondo */
+            background-size: cover; /* Ajusta el tamaño de la imagen de fondo para cubrir toda la página */
+            background-position: center; /* Centra la imagen de fondo */
+            color: white; /* Color del texto para que contraste con el fondo */
+            font-family: Arial, sans-serif; /* Estilo de fuente */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; /* Altura mínima de la ventana de visualización */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column; /* Para que el contenedor principal y el botón estén en columna */
+        }
+
+        /* Estilo para el contenedor principal */
+        .container {
+            width: 80%;
+            max-width: 800px; /* Limita el ancho máximo del contenedor */
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente para mejorar la legibilidad */
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px; /* Asegura que el contenedor no quede pegado al borde superior */
+        }
+
+        /* Estilo para las imágenes dentro del body */
+        .imagen {
+            display: block;
+            margin: 20px auto; /* Centra la imagen horizontalmente y agrega margen vertical */
+            max-width: 100%; /* Ajusta el tamaño de la imagen para que no sobrepase el contenedor */
+        }
+
+        /* Estilo para el texto */
+        h2, h4 {
+            margin: 20px 0; /* Agrega margen vertical */
+        }
+
+        /* Estilo para las preguntas y respuestas */
+        .faq {
+            text-align: left;
+            margin: 20px 0;
+        }
+        
+        .faq h3 {
+            margin: 10px 0;
+        }
+
+        .faq p {
+            margin: 10px 0;
+        }
+
+        /* Estilo para el botón */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            position: relative; /* Para ajustar la posición del temporizador */
+        }
+        
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilo para el botón desactivado */
+        .button.disabled {
+            background-color: #6c757d; /* Color para indicar que el botón está desactivado */
+            cursor: not-allowed;
+        }
+
+        /* Estilo para el temporizador debajo del botón */
+        .timer {
+            margin-top: 10px;
+            font-size: 14px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>¿Qué es fútbol en vivo?</h2>
+        <h4>
+            R: Fútbol Libre es una plataforma gratuita que te permite disfrutar de partidos de fútbol en tiempo real desde la comodidad de tu hogar. Ofrecemos transmisiones en vivo de las principales ligas y competiciones internacionales, incluyendo la Premier League, la Champions League, La Liga, la Serie A, y muchas otras.
+            <br><br>
+            La plataforma te permite seguir los partidos en directo con alta calidad de transmisión y disfrutar de una experiencia inmersiva gracias a nuestras funcionalidades avanzadas. Puedes personalizar tu experiencia seleccionando tus equipos y ligas favoritas para recibir notificaciones y actualizaciones en tiempo real.
+            <br><br>
+            La interfaz es intuitiva y está diseñada para que puedas acceder fácilmente a los partidos desde cualquier dispositivo, ya sea computadora, tableta o teléfono inteligente. Con nosotros, la emoción del fútbol está siempre al alcance de tu mano, ¡y todo completamente gratis!
+        </h4>
+
+        <!-- Imagen dentro del body -->
+        <img src="imagen.jpg" alt="Imagen de fútbol" class="imagen"> <!-- Reemplaza 'imagen.jpg' con la ruta de tu imagen -->
+
+        <!-- Sección de Preguntas Frecuentes (FAQ) -->
+        <div class="faq">
+            <h3>¿Cuáles son los métodos de pago disponibles?</h3>
+            <p>Nuestra plataforma es completamente gratuita. No necesitas realizar ningún pago para acceder a nuestros contenidos.</p>
+
+            <h3>¿La plataforma es compatible con dispositivos móviles?</h3>
+            <p>Sí, nuestra plataforma es compatible con la mayoría de los dispositivos móviles. Puedes disfrutar de la transmisión en vivo a través de nuestras aplicaciones móviles disponibles para iOS y Android, así como desde cualquier navegador web.</p>
+
+            <h3>¿Qué hago si tengo problemas técnicos durante una transmisión?</h3>
+            <p>Si experimentas problemas técnicos, te recomendamos que primero verifiques tu conexión a Internet. Si el problema persiste, puedes contactar con nuestro soporte técnico a través del formulario en nuestra página de ayuda, y nuestro equipo estará encantado de asistirte.</p>
+            
+            <h3>para ver los partidos esperen 10 segundos y toque el botón de Continuar y los llevara ala pagina donde podran ver los partidos de futbol</h3>
+        </div>
+
+        <!-- Botón de Continuar -->
+        <a id="continueButton" class="button disabled" href="https://futbollibre-hd.com/">
+            Por favor, espere
+        </a>
+        
+        <!-- Temporizador debajo del botón -->
+        <div id="timer" class="timer">10:00</div>
+    </div>
+
+    <script>
+        // Función para actualizar el temporizador y habilitar el botón después de 10 segundos
+        function startTimer(duration, display, button) {
+            var timer = duration, minutes, seconds;
+            var interval = setInterval(function() {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    button.classList.remove('disabled'); // Habilita el botón
+                    button.textContent = "Continuar";
+                    display.textContent = "¡Listo para continuar!";
+                    button.href = "https://futbollibre-hd.com/"; // Establece el enlace para el botón
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            var tenSeconds = 10, // Duración del temporizador en segundos
+                display = document.getElementById('timer'),
+                button = document.getElementById('continueButton');
+            startTimer(tenSeconds, display, button);
+        };
+    </script>
+</body>
+</html>
