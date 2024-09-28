@@ -1,228 +1,180 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta name="56c538be50d085bbb8c57fe5de97a9fab97b2015" content="56c538be50d085bbb8c57fe5de97a9fab97b2015" />
-    <meta charset="UTF-8">
-    <title>Fútbol Libre</title>
-    <style>
-        /* Estilo para el fondo de la página */
-        body {
-            background-image: url('fondo.jpg'); /* Reemplaza 'fondo.jpg' con la ruta de tu imagen de fondo */
-            background-size: cover; /* Ajusta el tamaño de la imagen de fondo para cubrir toda la página */
-            background-position: center; /* Centra la imagen de fondo */
-            color: white; /* Color del texto para que contraste con el fondo */
-            font-family: Arial, sans-serif; /* Estilo de fuente */
-            margin: 0;
-            padding: 0;
-            min-height: 100vh; /* Altura mínima de la ventana de visualización */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column; /* Para que el contenedor principal y el botón estén en columna */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autenticación</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
 
-        /* Estilo para el contenedor principal */
-        .container {
-            width: 80%;
-            max-width: 800px; /* Limita el ancho máximo del contenedor */
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente para mejorar la legibilidad */
-            border-radius: 10px;
-            text-align: center;
-            margin-top: 20px; /* Asegura que el contenedor no quede pegado al borde superior */
-        }
+    .form-container {
+      width: 300px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-        /* Estilo para las imágenes dentro del body */
-        .imagen {
-            display: block;
-            margin: 20px auto; /* Centra la imagen horizontalmente y agrega margen vertical */
-            max-width: 100%; /* Ajusta el tamaño de la imagen para que no sobrepase el contenedor */
-        }
+    .form-container h2 {
+      margin-bottom: 20px;
+      font-size: 1.5em;
+      text-align: center;
+    }
 
-        /* Estilo para el texto */
-        h2, h4 {
-            margin: 20px 0; /* Agrega margen vertical */
-        }
+    .form-container input[type="text"],
+    .form-container input[type="password"],
+    .form-container input[type="email"] {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
 
-        /* Estilo para las preguntas y respuestas */
-        .faq {
-            text-align: left;
-            margin: 20px 0;
-        }
-        
-        .faq h3 {
-            margin: 10px 0;
-        }
+    .form-container button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
 
-        .faq p {
-            margin: 10px 0;
-        }
+    .form-container button:hover {
+      background-color: #45a049;
+    }
 
-        /* Estilo para el botón */
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            color: white;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 16px;
-            cursor: pointer;
-            position: relative; /* Para ajustar la posición del temporizador */
-        }
-        
-        .button:hover {
-            background-color: #0056b3;
-        }
+    /* Estilos del contenedor oculto */
+    #registerForm, #loginForm {
+      display: none;
+    }
 
-        /* Estilo para el botón desactivado */
-        .button.disabled {
-            background-color: #6c757d; /* Color para indicar que el botón está desactivado */
-            cursor: not-allowed;
-        }
-
-        /* Estilo para el temporizador debajo del botón */
-        .timer {
-            margin-top: 10px;
-            font-size: 14px;
-            color: white;
-        }
-    </style>
-    <script>
-(function(ioyzb){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = ioyzb || {};
-s.src = "\/\/deafeningphone.com\/b.XYVqsbdEGll\/0bY\/Wtcs\/Re\/mM9yuHZ\/UElKkbPYT-UM1IN\/zVME1NO\/D\/gjt\/NKTqUv3\/M\/zLUk4\/OHQA";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-
-
+  </style>
 </head>
 <body>
-    
-    
-    <div class="container">
-        <h2>¿Qué es fútbol libre?</h2>
-        <h4>
-            R: Fútbol Libre es una plataforma gratuita que te permite disfrutar de partidos de fútbol en tiempo real desde la comodidad de tu hogar. Ofrecemos transmisiones en vivo de las principales ligas y competiciones internacionales, incluyendo la Premier League, la Champions League, La Liga, la Serie A, y muchas otras.
-            <br><br>
-            La plataforma te permite seguir los partidos en directo con alta calidad de transmisión y disfrutar de una experiencia inmersiva gracias a nuestras funcionalidades avanzadas. Puedes personalizar tu experiencia seleccionando tus equipos y ligas favoritas para recibir notificaciones y actualizaciones en tiempo real.
-            <br><br>
-            La interfaz es intuitiva y está diseñada para que puedas acceder fácilmente a los partidos desde cualquier dispositivo, ya sea computadora, tableta o teléfono inteligente. Con nosotros, la emoción del fútbol está siempre al alcance de tu mano, ¡y todo completamente gratis!
-        </h4>
 
-        <!-- Imagen dentro del body -->
-        <img src="imagen.jpg" alt="Imagen de fútbol" class="imagen"> <!-- Reemplaza 'imagen.jpg' con la ruta de tu imagen -->
+  <!-- Formulario de inicio de sesión -->
+  <div id="loginForm" class="form-container">
+    <h2>Iniciar sesión</h2>
+    <input type="email" placeholder="Email" id="loginEmail">
+    <input type="password" placeholder="Contraseña" id="loginPassword">
+    <button onclick="login()">Iniciar sesión</button>
+    <button onclick="redirectToRegister()">Registrarse</button>
+    <button onclick="signInWithGoogle()">Iniciar sesión con Google</button>
+  </div>
 
-        <!-- Sección de Preguntas Frecuentes (FAQ) -->
-        <div class="faq">
-            <h3>¿Cuáles son los métodos de pago disponibles?</h3>
-            <p>Nuestra plataforma es completamente gratuita. No necesitas realizar ningún pago para acceder a nuestros contenidos.</p>
+  <!-- Formulario de registro -->
+  <div id="registerForm" class="form-container">
+    <h2>Registrarse</h2>
+    <input type="text" placeholder="Nombre" id="registerName">
+    <input type="email" placeholder="Email" id="registerEmail">
+    <input type="password" placeholder="Contraseña" id="registerPassword">
+    <button onclick="register()">Registrarse</button>
+    <button onclick="redirectToLogin()">Volver al inicio de sesión</button>
+  </div>
 
-            <h3>¿La plataforma es compatible con dispositivos móviles?</h3>
-            <p>Sí, nuestra plataforma es compatible con la mayoría de los dispositivos móviles. Puedes disfrutar de la transmisión en vivo a través de nuestras aplicaciones móviles disponibles para iOS y Android, así como desde cualquier navegador web.</p>
+  <!-- Importar Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 
-            <h3>¿Qué hago si tengo problemas técnicos durante una transmisión?</h3>
-            <p>Si experimentas problemas técnicos, te recomendamos que primero verifiques tu conexión a Internet. Si el problema persiste, puedes contactar con nuestro soporte técnico a través del formulario en nuestra página de ayuda, y nuestro equipo estará encantado de asistirte.</p>
-            
-            <h3>Para ver los partidos, espere 10 segundos y toque el botón de Continuar, y lo llevará a la página donde podrá ver los partidos de fútbol.</h3>
-        </div>
+  <script>
+    // Configuración de Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyD7ztKPXGp5LlerfjCBfrTbcbaGxZPj_ms",
+      authDomain: "futbol-d291c.firebaseapp.com",
+      projectId: "futbol-d291c",
+      storageBucket: "futbol-d291c.appspot.com",
+      messagingSenderId: "869817814537",
+      appId: "1:869817814537:android:384efb4537fa2e1e7032d8"
+    };
 
-        <!-- Botón de Continuar -->
-        <a id="continueButton" class="button disabled" href="#">
-            Por favor, espere
-        </a>
-        
-        <!-- Temporizador debajo del botón -->
-        <div id="timer" class="timer">10:00</div>
-    </div>
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
 
-    <script>
-        // Función para actualizar el temporizador y habilitar el botón después de 10 segundos
-        function startTimer(duration, display, button) {
-            var timer = duration, minutes, seconds;
-            var interval = setInterval(function() {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
+    // Función para iniciar sesión
+    function login() {
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
 
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
+      auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+          window.location.href = "index.html"; // Redirigir a la página principal
+        })
+        .catch((error) => {
+          alert("Error al iniciar sesión: " + error.message);
+        });
+    }
 
-                display.textContent = minutes + ":" + seconds;
+    // Función para registrarse
+    function register() {
+      const name = document.getElementById("registerName").value;
+      const email = document.getElementById("registerEmail").value;
+      const password = document.getElementById("registerPassword").value;
 
-                if (--timer < 0) {
-                    clearInterval(interval);
-                    button.classList.remove('disabled'); // Habilita el botón
-                    button.textContent = "Continuar";
-                    display.textContent = "¡Listo para continuar!";
-                    button.href = "https://futbollibre-hd.com/"; // Establece el enlace para el botón
-                }
-            }, 1000);
-        }
+      auth.createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          user.updateProfile({
+            displayName: name
+          }).then(() => {
+            window.location.href = "index.html"; // Redirigir a la página principal
+          }).catch((error) => {
+            alert("Error al actualizar el nombre: " + error.message);
+          });
+        })
+        .catch((error) => {
+          alert("Error al registrarse: " + error.message);
+        });
+    }
 
-        window.onload = function () {
-            var tenSeconds = 10, // Duración del temporizador en segundos
-                display = document.getElementById('timer'),
-                button = document.getElementById('continueButton');
-            startTimer(tenSeconds, display, button);
-        };
-    </script>
+    // Función para iniciar sesión con Google
+    function signInWithGoogle() {
+      const provider = new firebase.auth.GoogleAuthProvider();
 
-    <!-- Script adicional -->
-    <script type="text/javascript" data-cfasync="false">
-    (function(){
-        var b=window, c="e3f71afd0babcfcf1d34da3c6e195088", l=[
-            ["siteId",969-264*828-505-467+5352769],
-            ["minBid",0],
-            ["popundersPerIP","0"],
-            ["delayBetween",0],
-            ["default",false],
-            ["defaultPerDay",0],
-            ["topmostLayer","auto"]
-        ], g=["d3d3LmludGVsbGlwb3B1cC5jb20vT0ZCL3RvYm9lLWJyb3dzZXIubWluLmpz","ZDNtcjd5MTU0ZDJxZzUuY2xvdWRmcm9udC5uZXQvYUh6VVJoL0l3WkdySi9zZmlsdGVyLm1pbi5jc3M="],
-        v=-1, u, j, t=function(){
-            clearTimeout(j);
-            v++;
-            if(g[v] && !(1752166446000<(new Date).getTime()&&1<v)){
-                u=b.document.createElement("script");
-                u.type="text/javascript"; u.async=!0;
-                var n=b.document.getElementsByTagName("script")[0];
-                u.src="https://"+atob(g[v]);
-                u.crossOrigin="anonymous";
-                u.onerror=t; u.onload=function(){
-                    clearTimeout(j);
-                    b[c.slice(0,16)+c.slice(0,16)] || t();
-                };
-                j=setTimeout(t,5E3);
-                n.parentNode.insertBefore(u,n);
-            }
-        };
-        if(!b[c]){
-            try{
-                Object.freeze(b[c]=l);
-            }catch(e){}
-            t();
-        }
-    })();
-    </script>
-    <script>
-(function(taei){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = taei || {};
-s.src = "\/\/deafeningphone.com\/a-Wc5zweY.W\/dflwQ\/2z9Ck_ZaTT9S6\/bl2\/5SlvSlWgQ\/9\/NzTHUx3MMGzdYewlOkCR0m1nNXTmcsz\/NhjOAz5A";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-    </script>
+      auth.signInWithPopup(provider)
+        .then(() => {
+          window.location.href = "index.html"; // Redirigir a la página principal
+        })
+        .catch((error) => {
+          alert("Error al iniciar sesión con Google: " + error.message);
+        });
+    }
+
+    // Función para redirigir al formulario de registro
+    function redirectToRegister() {
+      document.getElementById("loginForm").style.display = "none";
+      document.getElementById("registerForm").style.display = "block";
+    }
+
+    // Función para redirigir al formulario de inicio de sesión
+    function redirectToLogin() {
+      document.getElementById("registerForm").style.display = "none";
+      document.getElementById("loginForm").style.display = "block";
+    }
+
+    // Mostrar el formulario adecuado según la URL
+    window.onload = function() {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      if (urlParams.get('action') === 'register') {
+        redirectToRegister();
+      } else {
+        redirectToLogin();
+      }
+    }
+  </script>
+
 </body>
-</html>
+    </html>
